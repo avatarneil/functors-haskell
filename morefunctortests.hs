@@ -29,18 +29,18 @@ second f (c, a) = (c, f a)
 data Vec2 n = Vec2 n n
 
 instance Functor Vec2 where
-	fmap f (Vec2 (a) (b))  = Vec2 (f a) (f b)  
+	fmap f (Vec2 (a) (b))  = Vec2 (f a) (f b)
 
 -- We can build data structures more interesting than lists.
 -- One choice is a binary tree.
--- This particular Tree can never be empty.  
+-- This particular Tree can never be empty.
 -- A Tree a is either a Leaf with one a, or it branches into two sub-Trees.
-data Tree a = Leaf a | Branch (Tree a) (Tree a) 
+data Tree a = Leaf a | Branch (Tree a) (Tree a)
 
 -- We can recurse on Trees much the way we do on lists.
 
 -- Write a Functor instance for Tree.
 instance Functor Tree where
-	fmap f (Branch a s) = 
-	fmap f (Leaf a) = 
+	fmap f (Branch a s) = Branch (
+	fmap f (Leaf a) = Leaf (f a)
 main = return ()
