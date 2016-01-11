@@ -1,3 +1,0 @@
-instance Functor Maybe where
-  fmap _ Nothing  = Nothing
-  fmap h (Just a) = Just (h a)
