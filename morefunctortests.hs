@@ -41,6 +41,6 @@ data Tree a = Leaf a | Branch (Tree a) (Tree a)
 
 -- Write a Functor instance for Tree.
 instance Functor Tree where
-	fmap f (Branch a s) = Branch (
+	fmap f (Branch a s) = Branch (fmap f a) (fmap f a)
 	fmap f (Leaf a) = Leaf (f a)
 main = return ()
